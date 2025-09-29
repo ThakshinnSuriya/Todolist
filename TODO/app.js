@@ -28,10 +28,27 @@ function render(){
     const li = document.createElement('li');
     li.className = todo.done ? 'done' : '';
     li.innerHTML = `<span onclick="toggle(${i})">${todo.text}</span>
-                    <button onclick="remove(${i})">❌</button>`;
+                    <button onclick="remove(${i})">Delete</button>`;
     list.appendChild(li);
   });
 }
+// Theme toggle logic
+const toggleBtn = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+
+// Load saved theme
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark');
+  toggleBtn.textContent = '☀️ Light Mode';
+}
+
+// Toggle on click
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const darkMode = document.body.classList.contains('dark');
+  localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  toggleBtn.textContent = darkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+});
 
 function save(){
   localStorage.setItem('todos', JSON.stringify(todos));

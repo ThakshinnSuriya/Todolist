@@ -6,3 +6,33 @@ input { flex:1; padding:8px; border-radius:6px; border:1px solid #ccc; }
 button { padding:8px 12px; border:none; border-radius:6px; background:#007bff; color:white; }
 li { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #eee; }
 li.done span { text-decoration: line-through; color:gray; }
+/* --- Dark Theme Styles --- */
+body.dark {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+body.dark .container {
+  background: #2a2a2a;
+  width: 100%;
+}
+body.dark input,
+body.dark button {
+  background: #333;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+/* --- Toggle Button --- */
+.theme-btn {
+  float: right;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.theme-btn:hover {
+  background: #0056b3;
+}
